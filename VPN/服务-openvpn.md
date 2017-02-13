@@ -91,6 +91,14 @@ openvpn-2.4.0/sample/
         [root@linux-node01 ~]# grep '^local' /usr/local/openvpn-2.4.0/conf/server.conf           
     local 192.168.56.11
         ```
+        
+    * 修改连接IP
+
+        ```
+        push "route 192.168.3.0 255.255.255.0"
+        ```
+        **注意：** 如果不修改，阿里云无法链接，因此添加到推送的目的IP段
+        
 2. 客户端配置
     * 将客户端所需要的证书文件等拷贝到客户端的`conf`目录下
 
@@ -241,6 +249,8 @@ openvpn-2.4.0/sample/
     [pam_mysql-0.7RC1.tar.gz](https://sourceforge.net/projects/pam-mysql/)下载地址
     
     ```
+    yum install -y mysql-devel mysql
+    
     tar xf pam_mysql-0.7RC1.tar.gz
     
     ./configure -with-pam-mods-dir=/lib64/security
@@ -577,7 +587,7 @@ openvpn-2.4.0/sample/
     
     ```
     cd /usr/local/openvpn-2.4.0/
-    ./sbin/openvpn --genkey --secret ~/EasyRSA-2.2.2/keys/
+    ./sbin/openvpn --genkey --secret ~/EasyRSA-2.2.2/keys/ta.key
     ```
 
 7. 生成完证书可以结果如下
