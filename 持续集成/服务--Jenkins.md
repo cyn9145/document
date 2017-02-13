@@ -128,6 +128,8 @@
     > 注意管理员用户配置所有权限
     
     ![Jenkins_ConfGlobal_002](http://images.drakedog.cn/jenkins/Jenkins_ConfGlobal_002.png)
+    
+    > 特别注意: 由于图片原因可能导致显示不正确,非管理员用户只需要`Overall` 中的 ` Read`权限，别的所有权限均不需要
 
 2. 点击`保存`，完成修改
 
